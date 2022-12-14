@@ -1,0 +1,29 @@
+body {
+  font-family: $fontPrimary;
+  font-weight: 400;
+  background-color: $offWhite;
+  overflow-x: hidden;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.container {
+  max-width: 1920px;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 77%;
+  // padding: 0 165px;
+  @media (max-width: 1400px) {
+    // padding: 0 16px;
+    width: 91.5%;
+  }
+}
+.btn {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  display: inline-block;
+}
+

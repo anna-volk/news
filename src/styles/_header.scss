@@ -1,0 +1,98 @@
+.header {
+  margin: 89px 0 55px;
+  @media (max-width: 1300px) {
+    margin: 28px 0 32px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo-image {
+      margin-right: 1em;
+      .logo-img {
+        width: 64px;
+        aspect-ratio: 1.6063/1;
+        @media (max-width: 992px) {
+          width: 45px;
+        }
+      }
+    }
+    .nav-list {
+      display: flex;
+      gap: 40px;
+      @media (max-width: 640px) {
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 375px) {
+        justify-content: unset;
+        align-items: unset;
+      }
+      &.active {
+        display: flex;
+        padding: 144px 24px;
+        flex-direction: column;
+        gap: 24px;
+        background-color: $offWhite;
+        width: 70%;
+        position: fixed;
+        height: 100%;
+        right: 0;
+        top: 0;
+        .list-item {
+          .nav-link {
+            color: $veryDarkBlue;
+            font-size: $font18;
+            line-height: 1.33;
+          }
+        }
+      }
+      .list-item {
+        .nav-link {
+          text-transform: capitalize;
+          font-weight: 400;
+          font-size: $font15;
+          line-height: 1.73;
+          color: $darkGreyishBlue;
+          transition: color 0.3s;
+          &:hover,
+          &:focus {
+            color: $softRed;
+          }
+        }
+      }
+    }
+    .burger-btn {
+      position: relative;
+      z-index: 100;
+      display: none;
+      width: 40px;
+      aspect-ratio: 1/1;
+      background-image: url("@img/burger-icon.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      &.active {
+        background-image: url("@img/burger-close.svg");
+        background-size: 31px;
+      }
+      @media (max-width: 640px) {
+        display: block;
+      }
+    }
+    .overlay {
+      &.active {
+        background-color: rgb(0, 0, 26, 0.5);
+        position: fixed;
+        inset: 0;
+      }
+    }
+  }
+}
+// BODY LOCKED
+body {
+  &.locked {
+    overflow: hidden;
+  }
+}
